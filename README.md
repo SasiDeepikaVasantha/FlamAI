@@ -14,7 +14,7 @@
 pip install -r requirements.txt
 ```
 
-Run tokenizer_audit:
+Run PART A:
 
 ```bash
 python tokenizer_audit/scripts/audit_fertility.py \
@@ -32,7 +32,7 @@ python tokenizer_audit/scripts/compare_tokenizers.py \
   --tokenizer hf:xlm-roberta-base
 ```
 
-Run serving_analysis:
+Run PART B:
 
 ```bash
 python serving_analysis/analyze_bench.py \
