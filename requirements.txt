@@ -1,0 +1,6 @@
+tiktoken
+transformers
+tokenizers
+regex
+pandas
+numpy

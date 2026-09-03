@@ -1,0 +1,10 @@
+
+TOKENIZER: gpt2
+lang,tok_per_word,tok_per_codepoint,tok_per_grapheme,tok_per_utf8_byte,tok_per_line
+eng,1.269231,0.220982,0.220982,0.220982,9.900000
+hin,7.524590,1.582759,2.441489,0.600785,45.900000
+
+TOKENIZER: hf:xlm-roberta-base
+lang,tok_per_word,tok_per_codepoint,tok_per_grapheme,tok_per_utf8_byte,tok_per_line
+eng,1.282051,0.223214,0.223214,0.223214,10.000000
+hin,1.442623,0.303448,0.468085,0.115183,8.800000

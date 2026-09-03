@@ -1,0 +1,18 @@
+
+=== eng ===
+Original tok/word:       1.265206
+Original tok/char:       0.225636
+Corrected tok/word:      1.269231
+Tokens/codepoint:        0.220982
+Tokens/UTF-8 byte:       0.220982
+Tokens/line:             9.900000
+Original-vs-regex words: 1 extra split(' ') fields
+
+=== hin ===
+Original tok/word:       7.448452
+Original tok/char:       1.579108
+Corrected tok/word:      7.524590
+Tokens/codepoint:        1.582759
+Tokens/UTF-8 byte:       0.600785
+Tokens/line:             45.900000
+Original-vs-regex words: 1 extra split(' ') fields

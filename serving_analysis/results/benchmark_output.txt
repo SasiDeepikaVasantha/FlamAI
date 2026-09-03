@@ -1,0 +1,33 @@
+=== KV CACHE CALCULATION ===
+KV bytes/token: 114,688
+KV bytes/4096-token sequence: 469,762,048
+GPU memory budget at utilization limit: 22.080 GB
+Approx. fp16 weight memory: 8.400 GB
+Non-KV runtime overhead: 1.600 GB
+Remaining KV budget: 12.080 GB
+Theoretical full-length sequences: 25.72
+
+=== THROUGHPUT RECONCILIATION ===
+ batch_size  prompt_len  gen_len  wall_clock_s  reported_tok_s  total_tok_s_recomputed  generated_tok_s  preempted_seqs  kv_cache_util
+          1         512      256        10.940          70.200                  70.201           23.400               0          0.010
+          2         512      256        11.610         132.300                 132.300           44.100               0          0.010
+          4         512      256        11.770         261.000                 261.003           87.001               0          0.030
+          8         512      256        12.400         495.400                 495.484          165.161               0          0.060
+         16         512      256        13.910         883.200                 883.393          294.464               0          0.120
+         32         512      256        16.500        1489.600                1489.455          496.485               0          0.230
+         64         512      256        21.680        2267.300                2267.159          755.720               0          0.470
+          4        3584      512        28.980         565.400                 565.355           70.669               0          0.160
+          8        3584      512        36.300         902.600                 902.700          112.837               0          0.310
+         16        3584      512        49.970        1311.400                1311.507          163.938               0          0.620
+         24        3584      512        61.160        1607.400                1607.325          200.916               0          0.930
+         32        3584      512        94.710        1384.000                1383.930          172.991               7          0.970
+         48        3584      512       151.410        1298.500                1298.514          162.314              23          0.970
+
+=== BATCH-24 LONG-PROMPT GOODPUT ===
+Method 1: 24 * 512 / 61.16 = 200.916 generated tok/s
+Method 2: 1607.400 * 512 / (3584 + 512) = 200.925 generated tok/s
+
+=== ANOMALY CANDIDATES ===
+ batch_size  prompt_len  reported_tok_s  ttft_ms_p50  itl_ms_p50  e2e_ms_p95  preempted_seqs  kv_cache_util
+         32        3584          1384.0        636.9      101.79     97465.7               7           0.97
+         48        3584          1298.5        955.4      100.00    105427.5              23           0.97
